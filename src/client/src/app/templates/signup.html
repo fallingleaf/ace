@@ -1,0 +1,20 @@
+<div class="signup-form">
+  <h4> Register </h4>
+  <form class="form" [formGroup]="signupForm" (ngSubmit)="onSubmit()" novalidate>
+    <div *ngIf="errorMessage" class="error">
+      <span class="alert alert-danger">{{ errorMessage }}</span>
+    </div>
+    <md-input-container class="full-width">
+      <input mdInput type="text" placeholder="Name" formControlName="name">
+    </md-input-container>
+    <md-input-container class="full-width">
+      <input mdInput type="email" placeholder="Email" formControlName="email">
+    </md-input-container>
+    <md-input-container class="full-width">
+      <input mdInput type="password" placeholder="Password" formControlName="password">
+    </md-input-container>
+    <div>
+      <button md-button type="submit" value="Signup">Submit</button>
+    </div>
+  </form>
+</div>
