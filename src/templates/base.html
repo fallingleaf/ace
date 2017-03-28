@@ -1,15 +1,22 @@
 <!doctype html>
+{% load static %}
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Alue</title>
+    <title>{% block title %} Alue {% endblock %}</title>
     <base href="/">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% block header %} {% endblock %}
   </head>
   <body>
-    <app-root>Loading...</app-root>
+    <div class="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    {% block footerjs %}
+    {% endblock %}
   </body>
 </html>

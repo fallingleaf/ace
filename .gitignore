@@ -3,3 +3,7 @@ src/client/node_modules/
 src/client/dist/
 src/client/src/**/*.js
 src/client/src/**/*.js.map
+
+*.pyc
+env/
+venv/

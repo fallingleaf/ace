@@ -40,7 +40,7 @@ export class APIService {
     }
 
     request(options: any): Observable<any> {
-        let url = `${this.apiUrl}${options.url}`;
+        let url = options.url;
         let headers = this.getHeaders(options.withCredentials);
         let method = options.method || 'GET';
 
@@ -54,7 +54,7 @@ export class APIService {
                 console.log("request error...", err.toString());
 
                 if (err.status !== 200) {
-                    return Observable.throw(err.statusText);
+                    return Observable.throw(err.json());
                 }
 
                 return Observable.throw("Unhandled error");
@@ -64,7 +64,7 @@ export class APIService {
     uploadForm(data: FormData, options: any): Observable<any> {
       return Observable.create((observer:Observer<any>) => {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
-        let url = `${this.apiUrl}${options.url}`;
+        let url = options.url;
 
         xhr.onreadystatechange = () => {
           if(xhr.readyState == this.DONE) {

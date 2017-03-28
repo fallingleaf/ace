@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block header %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<app-root>Loading...</app-root>
+{% endblock %}
+
+{% block footerjs %}
+<script type="text/javascript" src="{{ CLIENT_URL }}polyfills.js"></script>
+<script type="text/javascript" src="{{ CLIENT_URL }}vendor.js"></script>
+<script type="text/javascript" src="{{ CLIENT_URL }}app.js"></script>
+{% endblock %}

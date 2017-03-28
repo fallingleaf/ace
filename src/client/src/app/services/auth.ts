@@ -25,10 +25,10 @@ export class AuthService {
       let headers: Headers = new Headers();
       headers.append('Content-Type', 'application/x-www-form-urlencoded');
       return this.api.request({
-          url: '/auth/token',
+          url: '/auth/token/',
           method: 'POST',
           headers: headers,
-          body: `grant_type=password&username=${user.email}&password=${user.password}`,
+          body: `email=${user.email}&password=${user.password}`,
           withAuthorization: false,
       })
           .map(res => {
@@ -47,7 +47,7 @@ export class AuthService {
 
   register(user: User): Observable<boolean> {
       return this.api.request({
-          url: '/users/register',
+          url: '/api/register/',
           method: 'POST',
           body: JSON.stringify({ name: user.name, email: user.email, password: user.password }),
           withAuthorization: false,

@@ -59,9 +59,8 @@ module.exports = {
       name: ['app', 'vendor', 'polyfills']
     }),
 
-    new HtmlWebpackPlugin({
-      template: 'src/index.html'
-    })
+    // new HtmlWebpackPlugin({
+    //   template: 'src/index.html'
+    // })
   ]
 };
-
