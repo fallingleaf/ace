@@ -2,8 +2,6 @@ import { Injectable, Component } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import { tokenNotExpired } from 'angular2-jwt';
-
 
 import { User } from '../models/User';
 
@@ -18,7 +16,8 @@ export class AuthService {
 
   isLoggedIn(): boolean {
       let token = this.token.getToken();
-      return tokenNotExpired(null, token);
+      return token !== null;
+      // return tokenNotExpired(null, token);
   }
 
   login(user: User): Observable<boolean> {
@@ -31,18 +30,17 @@ export class AuthService {
           body: `email=${user.email}&password=${user.password}`,
           withAuthorization: false,
       })
-          .map(res => {
-              let payload = res.payload;
-              if (!payload) {
-                  throw new Error("no payload in response");
-              }
-              let token = payload['access_token'];
-              if (!token) {
-                  throw new Error("no token in response");
-              }
-              this.token.storeToken(token);
-              return true;
-          });
+      .map(res => {
+          let token = res['token'];
+          console.log("token ...", token);
+
+          if (!token) {
+              throw new Error("no token in response");
+          }
+
+          this.token.storeToken(token);
+          return true;
+      });
   }
 
   register(user: User): Observable<boolean> {

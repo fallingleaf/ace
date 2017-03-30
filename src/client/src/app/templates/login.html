@@ -1,17 +1,17 @@
 <div class="login-form">
-  <h4> Login with password</h4>
+  <h4> Login</h4>
   <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
     <div *ngIf="errorMessage" class="error">
       <span class="alert alert-danger">{{ errorMessage }}</span>
     </div>
-    <md-input-container class="full-width">
-      <input mdInput type="email" placeholder="Email" formControlName="email">
-    </md-input-container>
-    <md-input-container class="full-width">
-      <input mdInput type="password" placeholder="Password" formControlName="password">
-    </md-input-container>
-    <div>
-      <button md-button type="submit" value="Login">Submit</button>
+    <div class="full-width form-group">
+      <input class="form-control" type="email" placeholder="Email" formControlName="email">
+    </div>
+    <div class="full-width form-group">
+      <input class="form-control" type="password" placeholder="Password" formControlName="password">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit" value="Login">Submit</button>
     </div>
   </form>
 </div>

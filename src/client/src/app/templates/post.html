@@ -1,17 +1,17 @@
-<md-card>
-  <md-card-title>
+<div class="card">
+  <div class="card-title">
     <p class="post-title">
       <a href="{{ post.user.link }}">
         <img class="avatar" src="{{ post.user.avatar }}"/>
       </a>
       <span>{{ post.title }}</span>
     </p>
-  </md-card-title>
-  <md-card-content>
-    <img md-card-image src="{{ post.img_url }}"/>
-  </md-card-content>
-  <md-card-footer>
+  </div>
+  <div class="card-content">
+    <img class="card-image" src="{{ post.img_url }}"/>
+  </div>
+  <div class="card-footer">
     <span class="view-count"> {{ post.views }}</span>
     <span class="comment-count"> {{ post.comments }} comments</span>
-  </md-card-footer>
-</md-card>
+  </div>
+</div>

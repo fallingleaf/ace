@@ -4,17 +4,17 @@
     <div *ngIf="errorMessage" class="error">
       <span class="alert alert-danger">{{ errorMessage }}</span>
     </div>
-    <md-input-container class="full-width">
-      <input mdInput type="text" placeholder="Name" formControlName="name">
-    </md-input-container>
-    <md-input-container class="full-width">
-      <input mdInput type="email" placeholder="Email" formControlName="email">
-    </md-input-container>
-    <md-input-container class="full-width">
-      <input mdInput type="password" placeholder="Password" formControlName="password">
-    </md-input-container>
+    <div class="full-width form-group">
+      <input class="form-control" type="text" placeholder="Name" formControlName="name">
+    </div>
+    <div class="full-width form-group">
+      <input class="form-control" type="email" placeholder="Email" formControlName="email">
+    </div>
+    <div class="full-width form-group">
+      <input class="form-control" type="password" placeholder="Password" formControlName="password">
+    </div>
     <div>
-      <button md-button type="submit" value="Signup">Submit</button>
+      <button class="btn btn-primary" type="submit" value="Signup">Submit</button>
     </div>
   </form>
 </div>

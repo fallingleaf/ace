@@ -51,8 +51,8 @@ export class APIService {
             })
             .map(res => res.json())
             .catch(err => {
-                console.log("request error...", err.toString());
 
+                console.log("request error...", err.toString());
                 if (err.status !== 200) {
                     return Observable.throw(err.json());
                 }

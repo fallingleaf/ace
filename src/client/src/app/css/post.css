@@ -1,29 +1,3 @@
-.mat-card {
-  width: 70%;
-  background-color: #fff;
-  color: #424242;
-  margin-bottom: 50px;
-}
-
-.mat-card-footer {
-  margin-top: 0;
-  padding: 20px;
-}
-
-.mat-card-image {
-  margin: 0;
-  width: 100%;
-}
-
-.mat-card-footer {
-  position: relative;
-}
-
-.mat-card-footer span {
-  font-size: 18px;
-  font-weight: bold;
-  margin-right: 10px;
-}
 
 p.post-title {
   margin: 0;

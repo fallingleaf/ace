@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { MaterialModule } from '@angular/material';
+// import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from '../components/app';
 import { HomeComponent } from '../components/home';
@@ -34,7 +34,7 @@ import 'hammerjs';
     ReactiveFormsModule,
     HttpModule,
     RouterModule,
-    MaterialModule,
+    // MaterialModule,
     AppRoutingModule
   ],
   providers: [APIService, AuthService, TokenService],

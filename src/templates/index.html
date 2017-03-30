@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block header %}
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- <link rel="stylesheet" href="{% static 'material/material.min.css' %}">
+<script src="{% static 'material/material.min.js' %}"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'tether/css/tether.min.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -12,4 +18,8 @@
 <script type="text/javascript" src="{{ CLIENT_URL }}polyfills.js"></script>
 <script type="text/javascript" src="{{ CLIENT_URL }}vendor.js"></script>
 <script type="text/javascript" src="{{ CLIENT_URL }}app.js"></script>
+
+<script type="text/javascript" src="{% static 'libs/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'tether/js/tether.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 {% endblock %}

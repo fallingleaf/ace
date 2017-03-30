@@ -73,5 +73,18 @@ class AuthUser(AbstractBaseUser):
 
     USERNAME_FIELD = 'email'
 
+    def get_short_name(self):
+        return self.username
+
+    def get_username(self):
+        return self.email
+
+    def has_perm(self, perm, obj=None):
+        # grant all permissions
+        return True
+
+    def has_module_perms(self, app_lable):
+        return True
+
     def __unicode__(self):
         return self.email

@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AuthService } from '../services/auth';
@@ -18,6 +18,7 @@ export class LoginComponent {
   errorMessage: string = '';
 
   constructor(
+    private router: Router,
     private auth: AuthService,
     private fb: FormBuilder) {
       this.createForm();
@@ -33,7 +34,9 @@ export class LoginComponent {
   onSubmit() {
     const user = this.loginForm.value;
     this.auth.login(user).subscribe(
-      result => { console.log(result) },
+      result => {
+        this.router.navigate(['/home']);
+      },
       err => {
         this.errorMessage = 'Invalid credentials';
 
