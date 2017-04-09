@@ -1,17 +1,24 @@
-<div class="card">
-  <div class="card-title">
-    <p class="post-title">
-      <a href="{{ post.user.link }}">
-        <img class="avatar" src="{{ post.user.avatar }}"/>
-      </a>
-      <span>{{ post.title }}</span>
-    </p>
+<div class="card post">
+  <div class="card-block">
+    <div class="card-title">
+      <p class="post-title">
+        <a href="#{{ post.creator.username }}">
+          <img class="avatar" src="{{ post.creator.avatar }}"/>
+        </a>
+        <span class="title">{{ post.title }}</span>
+      </p>
+    </div>
   </div>
-  <div class="card-content">
-    <img class="card-image" src="{{ post.img_url }}"/>
+
+  <a [routerLink]="['/posts', post.id, post.slug]">
+    <img class="img-responsive" src="{{ post.image_url }}"/>
+  </a>
+  <div class="card-block">
+    <a [routerLink]="['/posts', post.id, post.slug]">
+      <span class="view"> {{ post.nice_view }}</span>
+      <span class=" view glyphicon glyphicon-heart"></span>
+      <span class="comment"> {{ post.nice_comment }} comments</span>
+    </a>
   </div>
-  <div class="card-footer">
-    <span class="view-count"> {{ post.views }}</span>
-    <span class="comment-count"> {{ post.comments }} comments</span>
-  </div>
+
 </div>

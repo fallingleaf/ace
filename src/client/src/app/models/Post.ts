@@ -1,11 +1,13 @@
 export class Post {
   id: number;
   title: string;
-  // user #{ link: http://, avatar: http:// }
-  user: any;
-  img_url: string;
-  views: number;
-  comments: number;
-  created_on?: string;
-  updated_on?: string;
+  creator: any;
+  image_url: string;
+  thumb_url?: string;
+  slug?: string;
+  view_count: number;
+  comment_count: number;
+  nice_view?: string;
+  nice_comment?: string;
+  created_at?: string;
 }

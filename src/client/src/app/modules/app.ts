@@ -11,6 +11,7 @@ import { PostComponent } from '../components/post';
 import { LoginComponent } from '../components/login';
 import { SignupComponent } from '../components/signup';
 import { NewPostComponent } from '../components/newPost';
+import { PostDetailComponent } from '../components/postDetail';
 
 import { AuthService } from '../services/auth';
 import { TokenService } from '../services/token';
@@ -28,6 +29,7 @@ import 'hammerjs';
     LoginComponent,
     SignupComponent,
     NewPostComponent,
+    PostDetailComponent,
   ],
   imports: [
     BrowserModule,

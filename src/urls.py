@@ -11,6 +11,7 @@ from core import views
 router = routers.DefaultRouter()
 
 urlpatterns = [
+    url(r'^api/', include('api.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^api-list/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),

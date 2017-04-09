@@ -1,20 +1,22 @@
-<div class="signup-form">
-  <h4> Register </h4>
-  <form class="form" [formGroup]="signupForm" (ngSubmit)="onSubmit()" novalidate>
-    <div *ngIf="errorMessage" class="error">
-      <span class="alert alert-danger">{{ errorMessage }}</span>
-    </div>
-    <div class="full-width form-group">
-      <input class="form-control" type="text" placeholder="Name" formControlName="name">
-    </div>
-    <div class="full-width form-group">
-      <input class="form-control" type="email" placeholder="Email" formControlName="email">
-    </div>
-    <div class="full-width form-group">
-      <input class="form-control" type="password" placeholder="Password" formControlName="password">
-    </div>
-    <div>
-      <button class="btn btn-primary" type="submit" value="Signup">Submit</button>
-    </div>
-  </form>
+<div class="col-md-6 col-md-offset-3">
+  <div class="signup-form">
+    <h4> Register </h4>
+    <form class="form" [formGroup]="signupForm" (ngSubmit)="onSubmit()" novalidate>
+      <div *ngIf="errorMessage" class="error">
+        <span class="alert alert-danger">{{ errorMessage }}</span>
+      </div>
+      <div class="full-width form-group">
+        <input class="form-control" type="text" placeholder="Name" formControlName="name">
+      </div>
+      <div class="full-width form-group">
+        <input class="form-control" type="email" placeholder="Email" formControlName="email">
+      </div>
+      <div class="full-width form-group">
+        <input class="form-control" type="password" placeholder="Password" formControlName="password">
+      </div>
+      <div>
+        <button class="btn btn-primary" type="submit" value="Signup">Submit</button>
+      </div>
+    </form>
+  </div>
 </div>

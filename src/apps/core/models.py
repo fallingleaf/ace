@@ -5,18 +5,13 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 # Create your models here.
 class AuthUserManager(BaseUserManager):
-    def create_user(self, email, password):
-        """
-        Create and save user with the given email, username and password
-        :param email:
-        :param password:
-        :return: user
-        """
-        if not email:
-            raise ValueError('Users must have email address')
+    def create_user(self, username, email, password):
+        if not email or not username:
+            raise ValueError('Users must have email address and username')
 
         user = self.model(
             email=self.normalize_email(email),
+            username=username
         )
 
         user.is_active = True
@@ -26,12 +21,6 @@ class AuthUserManager(BaseUserManager):
         return user
 
     def create_superuser(self, email, password):
-        """
-        Create superuser with username, email and password
-        :param email:
-        :param password:
-        :return: user
-        """
         user = self.create_user(
             email=email,
             password=password,
@@ -55,6 +44,7 @@ class AuthUser(AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
+    avatar = models.TextField(null=True, blank=True)
 
     USER_ROLE = 1
     ADMIN_ROLE = 2
@@ -88,3 +78,26 @@ class AuthUser(AbstractBaseUser):
 
     def __unicode__(self):
         return self.email
+
+
+class Post(models.Model):
+    title = models.CharField(max_length=256, help_text='Title of post')
+    image_url = models.TextField(help_text='Image url')
+    thumb_url = models.TextField(null=True, blank=True)
+
+    view_count = models.PositiveIntegerField(default=0, help_text='Number of likes')
+    comment_count = models.PositiveIntegerField(default=0, help_text='Number of comments')
+
+    creator = models.ForeignKey(AuthUser, null=True, blank=True)
+    tags = models.TextField(null=True, blank=True)
+
+    category = models.CharField(max_length=128, null=True, blank=True, default='puppy')
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __unicode__(self):
+        return self.title

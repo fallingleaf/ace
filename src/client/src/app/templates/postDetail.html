@@ -1,0 +1,12 @@
+<div class="col-md-6 col-md-offset-3">
+  <div *ngIf="post" class="post-container">
+    <md-post [post]="post"></md-post>
+  </div>
+  <div class="related-containter">
+    <div class="row">
+      <div *ngFor="let rcp of related" class="col-md-6">
+        <md-post [post]="rcp"></md-post>
+      </div>
+    </div>
+  </div>
+</div>

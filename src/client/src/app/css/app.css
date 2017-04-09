@@ -1,3 +1,6 @@
-.spacer {
-  width: 100%;
+div.app {
+  background-color: #f4f4f4;
+  line-height: 26px;
+  /*font-family: "Open Sans", "arial, helvetica, sans-serif";*/
+  -webkit-font-smoothing: antialiased;
 }

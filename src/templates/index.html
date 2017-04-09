@@ -3,10 +3,7 @@
 {% load static %}
 
 {% block header %}
-<!-- <link rel="stylesheet" href="{% static 'material/material.min.css' %}">
-<script src="{% static 'material/material.min.js' %}"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
-<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'bootstrap3/css/bootstrap.min.css' %}">
 <link rel="stylesheet" href="{% static 'tether/css/tether.min.css' %}">
 {% endblock %}
 
@@ -15,11 +12,22 @@
 {% endblock %}
 
 {% block footerjs %}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48006727-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
 <script type="text/javascript" src="{{ CLIENT_URL }}polyfills.js"></script>
 <script type="text/javascript" src="{{ CLIENT_URL }}vendor.js"></script>
 <script type="text/javascript" src="{{ CLIENT_URL }}app.js"></script>
 
 <script type="text/javascript" src="{% static 'libs/jquery.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'tether/js/tether.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap3/js/bootstrap.min.js' %}"></script>
 {% endblock %}
