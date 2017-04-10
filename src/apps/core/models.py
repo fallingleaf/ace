@@ -81,9 +81,21 @@ class AuthUser(AbstractBaseUser):
 
 
 class Post(models.Model):
+    PENDING = 1
+    INVALID = 0
+    PUBLISHED = 2
+
+    STATUS_CHOICES = (
+        (INVALID, 'Invalid'),
+        (PENDING, 'Pending'),
+        (PUBLISHED, 'Published')
+        )
     title = models.CharField(max_length=256, help_text='Title of post')
     image_url = models.TextField(help_text='Image url')
+    medium_url = models.TextField(null=True, blank=True)
     thumb_url = models.TextField(null=True, blank=True)
+
+    credit = models.CharField(max_length=256, null=True, blank=True)
 
     view_count = models.PositiveIntegerField(default=0, help_text='Number of likes')
     comment_count = models.PositiveIntegerField(default=0, help_text='Number of comments')
@@ -91,7 +103,8 @@ class Post(models.Model):
     creator = models.ForeignKey(AuthUser, null=True, blank=True)
     tags = models.TextField(null=True, blank=True)
 
-    category = models.CharField(max_length=128, null=True, blank=True, default='puppy')
+    category = models.CharField(max_length=128, null=True, blank=True, default='dog')
+    status = models.IntegerField(null=True, choices=STATUS_CHOICES, default=PENDING)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -101,3 +114,16 @@ class Post(models.Model):
 
     def __unicode__(self):
         return self.title
+
+
+class OauthToken(models.Model):
+    provider = models.CharField(max_length=256)
+    username = models.CharField(max_length=256, null=True, blank=True)
+    fullname = models.CharField(max_length=256, null=True, blank=True)
+    guid = models.CharField(max_length=256, null=True, blank=True)
+
+    token = models.CharField(max_length=256, null=True, blank=True)
+    token_secret = models.CharField(max_length=256, null=True, blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

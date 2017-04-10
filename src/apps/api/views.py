@@ -22,7 +22,7 @@ def signup(request, format=None):
 class PostViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = (AllowAny,)
     serializer_class = PostSerializer
-    queryset = Post.objects.all().order_by('-created_at')
+    queryset = Post.objects.all().filter(status=Post.PUBLISHED).order_by('-created_at')
 
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
