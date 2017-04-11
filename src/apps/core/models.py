@@ -7,8 +7,8 @@ from django.utils.html import format_html
 # Create your models here.
 class AuthUserManager(BaseUserManager):
     def create_user(self, email, password, username=''):
-        if not email or not username:
-            raise ValueError('Users must have email address and username')
+        if not email:
+            raise ValueError('Users must have email address')
 
         user = self.model(
             email=self.normalize_email(email),
