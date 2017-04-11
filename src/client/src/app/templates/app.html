@@ -2,7 +2,8 @@
   <nav class="navbar">
     <div class="navbar-collapse">
       <a routerLink="/" class="btn">Home</a>
-      <span class="spacer"></span>
+      <a [routerLink]='["/home"]' [queryParams]='{category: "dog"}' class='btn'>Dog</a>
+      <a [routerLink]='["/home"]' [queryParams]='{category: "cat"}'  class='btn'>Cat</a>
       <a routerLink="/login" class="btn">Login</a>
       <a routerLink="/register" class="btn">Sign Up</a>
     </div>

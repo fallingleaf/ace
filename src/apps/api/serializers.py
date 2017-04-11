@@ -43,7 +43,7 @@ class SlugField(serializers.Field):
 
 class NiceNumberField(serializers.Field):
     def to_representation(self, obj):
-        if obj < 500:
+        if obj < 1000:
             return str(obj)
         return str(round(obj/1000.0, 1)).rstrip('.0') + 'k'
 

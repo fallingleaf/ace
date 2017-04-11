@@ -24,6 +24,12 @@ class PostViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = PostSerializer
     queryset = Post.objects.all().filter(status=Post.PUBLISHED).order_by('-created_at')
 
+    def list(self, request, *args, **kwargs):
+        cat = request.GET.get('category', None)
+        if cat:
+            self.queryset = self.queryset.filter(category=cat)
+        return super(PostViewSet, self).list(request, *args, **kwargs)
+
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance)

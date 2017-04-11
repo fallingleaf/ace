@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Post } from '../models/Post';
 import { APIService } from '../services/api';
-
 
 
 @Component({
@@ -10,16 +10,37 @@ import { APIService } from '../services/api';
   styleUrls: ['../css/home.css']
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   posts: Post[] = [];
   next_url: String = null;
+  category: String = null;
 
-  constructor(private api: APIService) {
+  constructor(private api: APIService, private route: ActivatedRoute) {
+  }
+
+  reset() {
+    this.posts = [];
+    this.next_url = null;
     this.getPosts();
   }
 
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      let cat = params['category'];
+      this.category = cat;
+      this.reset();
+    });
+  }
+
   getPosts() {
-    let url = this.next_url || '/api/posts/?page=1';
+    let url = this.next_url
+    if(url == null) {
+      if(this.category!=null) {
+        url = `/api/posts/?category=${this.category}`;
+      } else {
+        url = '/api/posts/';
+      }
+    }
     this.api.request({url: url, withCredentials: false})
     .subscribe(
       res => {

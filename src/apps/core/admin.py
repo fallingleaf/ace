@@ -8,4 +8,4 @@ class AuthUserAdmin(admin.ModelAdmin):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'view_count', 'comment_count', 'creator', 'created_at',)
+    list_display = ('title', 'img_tag', 'view_count', 'comment_count', 'category', 'creator', 'created_at',)

@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.utils.html import format_html
 
 
 # Create your models here.
@@ -115,6 +116,11 @@ class Post(models.Model):
     def __unicode__(self):
         return self.title
 
+    def img_tag(self):
+        return format_html('<img src="{}" alt="{}" style="width: 100px;"/>',
+                self.thumb_url, self.title)
+    img_tag.short_description = 'Image'
+
 
 class OauthToken(models.Model):
     provider = models.CharField(max_length=256)
@@ -122,6 +128,7 @@ class OauthToken(models.Model):
     fullname = models.CharField(max_length=256, null=True, blank=True)
     guid = models.CharField(max_length=256, null=True, blank=True)
 
+    access_level = models.CharField(max_length=32, null=True, blank=True)
     token = models.CharField(max_length=256, null=True, blank=True)
     token_secret = models.CharField(max_length=256, null=True, blank=True)
 
