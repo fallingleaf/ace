@@ -32,7 +32,7 @@ class SignUpSerializer(serializers.Serializer):
         username = self.validated_data['username']
         email = self.validated_data['email']
         passwd = self.validated_data['password']
-        user = AuthUser.objects.create_user(username, email, passwd)
+        user = AuthUser.objects.create_user(email, passwd, username=username)
         return user
 
 
