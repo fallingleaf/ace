@@ -1,0 +1,55 @@
+import os
+
+DEBUG = False
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
+SECRET_KEY = os.getenv('SECRET_KEY', 'No secret key')
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv('DB_NAME', 'ace'),
+        'USER': os.getenv('DB_USER', 'storm'),
+        'PASSWORD': os.getenv('DB_PASSWD', '05021988'),
+        'HOST': os.getenv('DB_HOST', '127.0.0.1'),
+        'PORT': 3306
+    }
+}
+
+ADMINS = [('Tam Nguyen', 'tamnghoang@gmail.com')]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': { 'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler'
+        },
+    'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/tmp/django-debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    'django.request': {
+            'handlers': ['file', 'mail_admins'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+    }
+}

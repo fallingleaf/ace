@@ -7,3 +7,5 @@ src/client/src/**/*.js.map
 *.pyc
 env/
 venv/
+static/
+media/
