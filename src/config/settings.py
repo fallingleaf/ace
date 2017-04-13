@@ -86,9 +86,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ace',
-        'USER': 'storm',
-        'PASSWORD': '05021988',
-        'HOST': '127.0.0.1',
+        'USER': 'admin',
+        'PASSWORD': 'aH8t^z9v',
+        'HOST': '138.68.57.9',
         'PORT': 3306
     }
 }
@@ -157,7 +157,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 3,
+    'PAGE_SIZE': 100,
 
     'NON_FIELD_ERRORS_KEY': 'generic_error',
 }

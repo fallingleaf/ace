@@ -1,12 +1,17 @@
 <div class="header">
   <nav class="navbar">
-    <div class="navbar-collapse">
-      <a routerLink="/" class="btn">Home</a>
-      <a [routerLink]='["/home"]' [queryParams]='{category: "dog"}' class='btn'>Dog</a>
-      <a [routerLink]='["/home"]' [queryParams]='{category: "cat"}'  class='btn'>Cat</a>
-      <a routerLink="/login" class="btn">Login</a>
-      <a routerLink="/register" class="btn">Sign Up</a>
-    </div>
+      <div class="collapse navbar-collapse">
+        <div class="nav navbar-nav navbar-left">
+          <a routerLink="/" class="">Home</a>
+          <a [routerLink]='["/home"]' [queryParams]='{category: "dog"}'>Dog</a>
+          <a [routerLink]='["/home"]' [queryParams]='{category: "cat"}'>Cat</a>
+          <a [routerLink]='["/home"]' [queryParams]='{category: "panda"}'>Panda</a>
+        </div>
+        <div class="nav navbar-nav navbar-right">
+          <a routerLink="/login">Login</a>
+          <a routerLink="/register">Sign Up</a>
+        </div>
+      </div>
   </nav>
 </div>
 <div class="app">

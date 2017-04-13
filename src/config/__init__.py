@@ -1,5 +1,6 @@
-import os
 from settings import *
 
-if os.getenv('ENV') in ('prod', 'production'):
+try:
     from prod import *
+except ImportError:
+    pass

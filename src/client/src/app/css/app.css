@@ -1,6 +1,32 @@
 div.app {
   background-color: #f4f4f4;
   line-height: 26px;
-  /*font-family: "Open Sans", "arial, helvetica, sans-serif";*/
   -webkit-font-smoothing: antialiased;
+}
+
+div.header {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Open Sans", "arial, helvetica, sans-serif";
+}
+
+.nav > a {
+  text-decoration: none;
+  padding: 10px;
+  color: #444;
+  vertical-align: middle;
+}
+
+.nav > a:hover {
+  color: #00a9e5;
+}
+
+.navbar-collapse {
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.navbar-right {
+  margin-right: 0;
 }

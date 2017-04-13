@@ -2,9 +2,12 @@
   <div *ngIf="post" class="post-container">
     <md-post [post]="post"></md-post>
   </div>
+</div>
+<div class="col-md-10 col-md-offset-1">
   <div class="related-containter">
     <div class="row">
-      <div *ngFor="let rcp of related" class="col-md-6">
+      <h4 class="recommend"> You might like: </h4>
+      <div *ngFor="let rcp of related" class="col-md-3">
         <md-post [post]="rcp"></md-post>
       </div>
     </div>
