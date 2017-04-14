@@ -8,5 +8,5 @@ src/config/prod.py
 *.pyc
 env/
 venv/
-static/
-media/
+/static/
+/media/
