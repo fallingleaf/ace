@@ -11,13 +11,13 @@
   </div>
 
   <a [routerLink]="['/posts', post.id, post.slug]">
-    <img class="img-responsive" src="{{ post.image_url }}"/>
+    <img class="img-responsive" src="{{ post.image_url }}" alt="{{ post.title }}"/>
   </a>
   <div class="card-block">
     <a [routerLink]="['/posts', post.id, post.slug]">
       <span class="view"> {{ post.nice_view }}</span>
       <span class=" view glyphicon glyphicon-heart"></span>
-      
+
     </a>
   </div>
 

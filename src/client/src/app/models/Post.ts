@@ -6,6 +6,7 @@ export class Post {
   medium_url: string;
   thumb_url?: string;
   slug?: string;
+  credit?: string;
   view_count: number;
   comment_count: number;
   nice_view?: string;
