@@ -1,17 +1,22 @@
 <div class="header">
   <nav class="navbar">
-      <div class="collapse navbar-collapse">
-        <div class="nav navbar-nav navbar-left">
-          <a routerLink="/" class="">Home</a>
-          <a [routerLink]='["/home"]' [queryParams]='{category: "dog"}'>Dog</a>
-          <a [routerLink]='["/home"]' [queryParams]='{category: "cat"}'>Cat</a>
-          <a [routerLink]='["/home"]' [queryParams]='{category: "panda"}'>Panda</a>
-        </div>
-        <div class="nav navbar-nav navbar-right">
-          <a routerLink="/login">Login</a>
-          <a routerLink="/register">Sign Up</a>
-        </div>
+    <div class="navbar-header">
+      <a class="navbar-brand" [routerLink]='["/"]'>
+        <img alt="Brand" src="/static/images/paw2.gif">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse">
+
+      <div class="nav navbar-nav navbar-left">
+        <a [routerLink]='["/home"]' [queryParams]='{category: "dog"}'>Dog</a>
+        <a [routerLink]='["/home"]' [queryParams]='{category: "cat"}'>Cat</a>
+        <a [routerLink]='["/home"]' [queryParams]='{category: "panda"}'>Panda</a>
       </div>
+      <div class="nav navbar-nav navbar-right">
+        <a routerLink="/login">Login</a>
+        <a routerLink="/register">Sign Up</a>
+      </div>
+    </div>
   </nav>
 </div>
 <div class="app">

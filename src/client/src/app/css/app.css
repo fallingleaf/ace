@@ -1,5 +1,6 @@
 div.app {
   background-color: #f4f4f4;
+  /*background-image: url('/static/images/paw.png');*/
   line-height: 26px;
   -webkit-font-smoothing: antialiased;
 }
@@ -8,6 +9,14 @@ div.header {
   font-size: 18px;
   font-weight: 500;
   font-family: "Open Sans", "arial, helvetica, sans-serif";
+}
+
+.navbar-brand {
+  padding-top: 5px;
+}
+.navbar-brand > img {
+  vertical-align: top;
+  height: 40px;
 }
 
 .nav > a {
