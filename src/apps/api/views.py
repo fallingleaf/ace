@@ -34,6 +34,6 @@ class PostViewSet(viewsets.ReadOnlyModelViewSet):
         instance = self.get_object()
         serializer = self.get_serializer(instance)
         related = (self.get_queryset().filter(category=instance.category)
-                    .exclude(pk=instance.pk)[:10])
+                    .exclude(pk=instance.pk)[:8])
         objs = self.get_serializer(related, many=True)
         return Response({'object': serializer.data, 'related': objs.data})

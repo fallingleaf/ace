@@ -44,7 +44,6 @@ export class HomeComponent implements OnInit{
     this.api.request({url: url, withCredentials: false})
     .subscribe(
       res => {
-        console.log(res);
         if(res.next != null) {
           this.next_url = res.next;
         }
