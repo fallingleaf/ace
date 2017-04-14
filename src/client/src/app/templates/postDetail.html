@@ -7,8 +7,11 @@
   <div class="related-containter">
     <div class="row">
       <h4 class="recommend"> You might like: </h4>
-      <div *ngFor="let rcp of related" class="col-md-3">
-        <md-post [post]="rcp"></md-post>
+      <div *ngFor="let rcp of related; index as i">
+        <div class="col-md-3">
+          <md-post [post]="rcp"></md-post>
+        </div>
+        <div *ngIf="i%4 == 3" class="clearfix"></div>
       </div>
     </div>
   </div>
