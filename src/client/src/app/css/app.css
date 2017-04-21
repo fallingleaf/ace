@@ -19,14 +19,15 @@ div.header {
   height: 40px;
 }
 
-.nav > a {
+li > a {
   text-decoration: none;
   padding: 10px;
   color: #444;
   vertical-align: middle;
+  text-align: justify;
 }
 
-.nav > a:hover {
+li > a:hover {
   color: #00a9e5;
 }
 
@@ -38,4 +39,16 @@ div.header {
 
 .navbar-right {
   margin-right: 0;
+}
+
+.navbar-toggle {
+  border-color: #ddd;
+}
+
+.navbar-toggle:hover {
+  background-color: #ddd;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: #888;
 }
